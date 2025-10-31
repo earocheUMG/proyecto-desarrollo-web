@@ -170,7 +170,7 @@
     border-color: #3498db;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .biblioteca {
         padding: 1rem 0;

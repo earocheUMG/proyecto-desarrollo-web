@@ -1,70 +1,177 @@
-# Getting Started with Create React App
+# Biblioteca Personal Digital
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Información del Proyecto
+**Desarrollado por:** Eduardo Humberto Aroche Noriega  
+**Universidad:** Universidad Mariano Gálvez de Guatemala  
+**Curso:** Desarrollo Web  
+**Repositorio:** [https://github.com/earocheUMG/proyecto-desarrollo-web]
 
-## Available Scripts
+## Descripción
+Aplicación sencilla donde se pusieron en practica los conocimientos adquiridos durante el curso de desarrollo web, utilizando HTML, JavaScript y CSS, a traves de una arquitectura moderna como es React + Node.js
 
-In the project directory, you can run:
+## Características Principales
+- **Autenticación segura** - Registro e inicio de sesión con JWT
+- **Gestión de libros** - Agregar y visualizar tu biblioteca personal
+- **Diseño responsive** - Compatible con móviles, tablets y desktop
+- **Interfaz intuitiva** - Fácil de usar y navegar
+- **Protección de rutas** - Acceso restringido a usuarios autenticados
+- **Arquitectura moderna** - Frontend React + Backend Node.js
 
-### `npm start`
+## 🛠️ Tecnologías Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
+- React.js 18.2.0
+- CSS3 con diseño responsive
+- React Router DOM 6.15.0
+- Axios 1.5.0 para peticiones HTTP
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend
+- Node.js 18.0+
+- Express.js 4.18.2
+- PostgreSQL con pg 8.11.0
+- JWT para autenticación
+- Bcryptjs para encriptación
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instalación y Configuración
 
-### `npm run build`
+### Prerrequisitos
+- Node.js (v18 o superior)
+- PostgreSQL (v14 o superior)
+- npm
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Pasos de Instalación
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clonar el repositorio**
+```bash
+git clone https://github.com/earocheUMG/proyecto-desarrollo-web.git
+cd proyecto-desarrollo-web
+Configurar el Backend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+bash
+cd backend
+npm install
 
-### `npm run eject`
+# Variables de entorno
+cp .env.example .env
+Editar archivo .env del backend:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+env
+PORT=5000
+DB_USER=postgres
+DB_PASSWORD=tu_password_postgres
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=biblioteca_personal
+JWT_SECRET=tu_jwt_secreto
+NODE_ENV=development
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Configurar la Base de Datos
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+sql
+-- Conectar a PostgreSQL y ejecutar:
+CREATE DATABASE biblioteca_personal;
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-- Ejecutar el schema para crear tablas
+\i database/schema.sql
+Configurar el Frontend
 
-## Learn More
+bash
+cd ../frontend
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Configurcion de API URL
+echo "REACT_APP_API_URL=http://localhost:5000" > .env
+Ejecutar la Aplicación
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+bash
 
-### Code Splitting
+cd backend
+npm run dev
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+cd frontend
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Estructura del Proyecto
+text
+proyecto-desarrollo-web/
+├── backend/
+│   ├── config/
+│   │   └── database.js          # Configuración PostgreSQL
+│   ├── routes/
+│   │   ├── auth.js              # Rutas de autenticación
+│   │   └── libros.js            # Rutas de libros
+│   ├── middleware/
+│   │   └── authMiddleware.js    # Middleware de autenticación
+│   ├── .env
+│   ├── server.js
+│   └── package.json
+├── frontend/
+│   ├── src/
+│   │   ├── components/          # Componentes React
+│   │   ├── pages/               # Páginas principales
+│   │   ├── context/             # Context API
+│   │   ├── services/            # Configuración API
+│   │   └── styles/              # Estilos CSS
+│   └── package.json
+└── README.md
 
-### Making a Progressive Web App
+Funcionalidades
+Autenticación
+Registro de nuevos usuarios con validación
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Login seguro con JWT tokens
 
-### Advanced Configuration
+Protección de rutas privadas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Persistencia de sesión
 
-### Deployment
+Gestión de Libros
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Visualizar todos los libros del usuario
 
-### `npm run build` fails to minify
+Interfaz de tarjetas para mejor visualización
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Interfaz de Usuario
+Página de inicio con hero section y características
+
+Sección visión/misión con diseño de tres tarjetas
+
+Navegación responsive con menús dinámicos
+
+Footer con información de contacto y redes sociales
+
+API Endpoints
+Autenticación
+POST /api/auth/registro - Registrar usuario
+
+POST /api/auth/login - Iniciar sesión
+
+GET /api/auth/verificar - Verificar token
+
+Libros
+GET /api/libros - Obtener libros del usuario (requiere autenticación)
+
+Uso de la Aplicación
+Registro: Crear una nueva cuenta desde la página principal
+
+Login: Iniciar sesión con email y contraseña
+
+Dashboard: Acceder a la biblioteca personal después del login
+
+Navegación: Usar el menú para moverse entre secciones
+
+Diseño y Experiencia
+Paleta de colores: Gradientes morados y azules
+
+Tipografía: Fuentes limpias y legibles
+
+Responsive: Grid system adaptable a todos los dispositivos
+
+Interacciones: Efectos hover y transiciones suaves
+
+
+
+
+

@@ -16,13 +16,13 @@
 }
 
 .copyright {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     color: #ecf0f1;
 }
 
 .social-icons {
     display: flex;
-    gap: 1rem;
+    gap: 1.3rem;
 }
 
 .social-icon {

@@ -57,7 +57,7 @@
     background-color: #c0392b;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;

@@ -4,7 +4,7 @@
     align-items: center;
     min-height: 80vh;
     padding: 2rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #546e88;
 }
 
 .auth-card {
@@ -57,7 +57,7 @@
 .auth-btn {
     width: 100%;
     padding: 0.75rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #2c3e50;
     color: white;
     border: none;
     border-radius: 5px;
@@ -105,7 +105,7 @@
     text-decoration: underline;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .auth-container {
         padding: 1rem;

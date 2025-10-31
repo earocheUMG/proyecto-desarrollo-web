@@ -17,6 +17,8 @@ const Biblioteca = () => {
     try {
       const data = await librosAPI.obtenerLibros();
       setLibros(data);
+      setLibros(data);
+console.log('Libros cargados:', data);
     } catch (err) {
       setError('Error al cargar los libros: ' + (err.response?.data?.error || err.message));
     } finally {
@@ -85,8 +87,8 @@ const Biblioteca = () => {
                   )}
                 </div>
                 <div className="libro-actions">
-                  <button className="btn-action">📖 Leer</button>
-                  <button className="btn-action">✏️ Editar</button>
+                  <button className="btn-action">Leer</button>
+                  <button className="btn-action">Editar</button>
                 </div>
               </div>
             ))}

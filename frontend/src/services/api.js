@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-// Configuración base de axios
+
 const API = axios.create({
   baseURL: process.env.REACT_APP_API_URL || 'http://localhost:5000/api',
   timeout: 10000,
 });
 
-// Interceptor para agregar el token a las peticiones
+
 API.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
@@ -20,7 +20,7 @@ API.interceptors.request.use(
   }
 );
 
-// Interceptor para manejar errores globalmente
+
 API.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -33,7 +33,7 @@ API.interceptors.response.use(
   }
 );
 
-// Servicios de Autenticación
+
 export const authAPI = {
   login: async (email, password) => {
     const response = await API.post('/auth/login', { email, password });
@@ -51,7 +51,7 @@ export const authAPI = {
   }
 };
 
-// Servicios de Libros
+
 export const librosAPI = {
   obtenerLibros: async () => {
     const response = await API.get('/libros');
@@ -61,25 +61,10 @@ export const librosAPI = {
   obtenerLibro: async (id) => {
     const response = await API.get(`/libros/${id}`);
     return response.data;
-  },
-
-  crearLibro: async (libro) => {
-    const response = await API.post('/libros', libro);
-    return response.data;
-  },
-
-  actualizarLibro: async (id, libro) => {
-    const response = await API.put(`/libros/${id}`, libro);
-    return response.data;
-  },
-
-  eliminarLibro: async (id) => {
-    const response = await API.delete(`/libros/${id}`);
-    return response.data;
   }
 };
 
-// Servicios de Contacto
+
 export const contactoAPI = {
   enviarMensaje: async (mensaje) => {
     const response = await API.post('/contacto', mensaje);
