@@ -17,7 +17,7 @@ Aplicación sencilla donde se pusieron en practica los conocimientos adquiridos 
 - **Protección de rutas** - Acceso restringido a usuarios autenticados
 - **Arquitectura moderna** - Frontend React + Backend Node.js
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 ### Frontend
 - React.js 18.2.0
