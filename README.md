@@ -101,7 +101,8 @@ proyecto-desarrollo-web/
 │   │   └── database.js          # Configuración PostgreSQL
 │   ├── routes/
 │   │   ├── auth.js              # Rutas de autenticación
-│   │   └── libros.js            # Rutas de libros
+│   │   └── libros.js            # Rutas para los libros
+│   │   └── contacto.js          # Formulario de contacto
 │   ├── middleware/
 │   │   └── authMiddleware.js    # Middleware de autenticación
 │   ├── .env
@@ -113,7 +114,7 @@ proyecto-desarrollo-web/
 │   │   ├── pages/               # Páginas principales
 │   │   ├── context/             # Context API
 │   │   ├── services/            # Configuración API
-│   │   └── styles/              # Estilos CSS
+│   │
 │   └── package.json
 └── README.md
 
